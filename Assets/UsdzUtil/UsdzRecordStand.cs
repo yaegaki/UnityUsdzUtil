@@ -172,6 +172,11 @@ namespace UsdzUtil
                 thumbnailDirectory = Path.GetFullPath(this.exportDirectory);
             }
             
+            if (!Directory.Exists(thumbnailDirectory))
+            {
+                Directory.CreateDirectory(thumbnailDirectory);
+            }
+            
             var thumbnailFileName = fileName + ".png";
             var thumbnailFilePath = Path.Combine(thumbnailDirectory, thumbnailFileName);
 
