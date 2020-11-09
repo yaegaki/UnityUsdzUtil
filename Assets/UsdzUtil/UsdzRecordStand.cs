@@ -190,7 +190,7 @@ namespace UsdzUtil
                 this.thumbnailCamera.Render();
 
                 RenderTexture.active = tex;
-                var tex2d = new Texture2D(size, size, TextureFormat.ARGB32, 0, false);
+                var tex2d = new Texture2D(size, size, TextureFormat.ARGB32, false, false);
                 tex2d.ReadPixels(new Rect(0, 0, size, size), 0, 0);
                 var bytes = tex2d.EncodeToPNG();
                 File.WriteAllBytes(thumbnailFilePath, bytes);
